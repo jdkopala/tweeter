@@ -1,15 +1,15 @@
 .new-tweet {
   display: flex;
   align-content: center;
-  font-family: 'Bungee', 'sans serif';
 }
 
 textarea {
-  height: 80px;
   font-size: 16px;
+  font-family: 'Souce Sans Pro', sans-serif;
   outline: none;
   background: none;
   resize: none;
+  height: 80px;
   width: 500px;
   border-top: none;
   border-right: none;
@@ -26,6 +26,7 @@ button {
 #button-counter {
   display: flex;
   justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
 }
 
 .counter {
