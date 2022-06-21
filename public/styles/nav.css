@@ -12,7 +12,7 @@ nav {
 
 nav span {
  display: flex;
- font-family: 'Bungee', 'sans-serif';
+ font-family: 'Bungee', sans-serif;
  align-items: center;
  font-size: 1.5em;
 }
