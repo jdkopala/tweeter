@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  background-color: #cd7b29;
+  background-image: url("../images/always-grey.png");
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+header div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#username {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: flex-end;
+}
+
+h2 {
+  padding-bottom: 50px;
+}

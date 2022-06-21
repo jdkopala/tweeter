@@ -1,0 +1,29 @@
+nav {
+ display: flex;
+ height: 120px;
+ width: 100%;
+ background-color: #4056A1;
+ color: #FFFFFF;
+ padding-left: 1.5em;
+ padding-right: 1.5em;
+ justify-content: space-between;
+ z-index: -1;
+}
+
+nav span {
+ display: flex;
+ font-family: 'Bungee', 'sans-serif';
+ align-items: center;
+ font-size: 1.5em;
+}
+
+#icon-arrows {
+  color: red;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}

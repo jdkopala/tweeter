@@ -1,0 +1,34 @@
+.new-tweet {
+  display: flex;
+  align-content: center;
+  font-family: 'Bungee', 'sans serif';
+}
+
+textarea {
+  height: 80px;
+  font-size: 16px;
+  outline: none;
+  background: none;
+  resize: none;
+  width: 500px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 5px solid black;
+}
+
+button {
+  border: none;
+  color: #f4f1ec;
+  background-color: #4056A1;
+}
+
+#button-counter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter {
+  display: flex;
+  width: 10%;
+}
