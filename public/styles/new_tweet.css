@@ -33,3 +33,9 @@ button {
   display: flex;
   width: 10%;
 }
+
+.counter-negative {
+  display: flex;
+  width: 10%;
+  color: red;
+}
