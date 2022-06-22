@@ -4,11 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = (str) => {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const loadTweets = () => {
   $.get("/tweets")
     .then((data) => {
       renderTweets(data);
-    })
+    });
 };
 
 const renderTweets = (data) => {
@@ -20,7 +26,7 @@ const renderTweets = (data) => {
 
 const createTweetElement = (tweetData) => {
   let $tweet = (
-  `<article class="tweet">
+    `<article class="tweet">
     <header>
       <div>
         <img class="avatar" src=${tweetData.user.avatars}>
@@ -31,7 +37,7 @@ const createTweetElement = (tweetData) => {
       </span>
     </header>
     <div class="content">
-      ${tweetData.content.text}
+      ${escape(tweetData.content.text)}
     </div>
     <footer>
       <span>
@@ -43,7 +49,8 @@ const createTweetElement = (tweetData) => {
         <i class="fa-solid fa-heart-circle-plus"></i>
       </div>
     </footer>
-  </article>`)
+  </article>`);
+
   return $tweet;
 };
 
@@ -58,13 +65,13 @@ $(document).ready(() => {
       alert("Your tweet is too long");
       return false;
     } else if (!$tweetText) {
-      alert('Your tweet is too empty');
+      alert('Your tweet is empty');
       return false;
     } else if ($tweetText <= 140) {
       const $newTweet = $form.serialize();
       $.post("/tweets", $newTweet)
         .then(loadTweets());
-      $("#tweet-text").val("")
+      $("#tweet-text").val("");
     }
   });
 });
