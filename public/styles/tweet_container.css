@@ -1,0 +1,46 @@
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: none;
+  width: 750px;
+  margin: 20px;
+  border: 2px solid black;
+}
+
+article:hover {
+  box-shadow: 5px 5px 3px orange;
+}
+
+article i:hover {
+  color: orange;
+}
+
+article header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  padding: 5px;
+}
+
+article text {
+  margin: 15px;
+  font-size: 18px;
+}
+
+article span {
+  color: rgb(110, 138, 147);
+  font-size: 16px;
+}
+
+article footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  width: 98%;
+  padding: 5px;
+}

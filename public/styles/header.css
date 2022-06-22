@@ -1,4 +1,4 @@
-header {
+#top-of-page {
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -10,7 +10,7 @@ header {
   z-index: 9;
 }
 
-header div {
+#profile-pic {
   display: flex;
   justify-content: flex-end;
   align-items: center;
