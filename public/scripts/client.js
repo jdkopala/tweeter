@@ -34,7 +34,7 @@ const createTweetElement = (tweetData) => {
       ${tweetData.content.text}
     </div>
     <footer>
-      <span class="to_be_rendered">
+      <span>
         ${timeago.format(tweetData.created_at)}
       </span>
       <div>
@@ -57,10 +57,14 @@ $(document).ready(() => {
     if ($tweetText > 140) {
       alert("Your tweet is too long");
       return false;
+    } else if (!$tweetText) {
+      alert('Your tweet is too empty');
+      return false;
     } else if ($tweetText <= 140) {
       const $newTweet = $form.serialize();
       $.post("/tweets", $newTweet)
         .then(loadTweets());
+      $("#tweet-text").val("")
     }
   });
 });
