@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  console.log("The JS file is loaded");
   let countStart = 140
 
   $("#tweet-text").on('input', function() {
