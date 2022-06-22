@@ -3,13 +3,17 @@
   align-content: center;
 }
 
+section.new-tweet form {
+  padding: 5px;
+}
+
 textarea {
   font-size: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   outline: none;
   background: none;
   resize: none;
-  height: 40px;
+  height: 60px;
   width: 750px;
   border-top: none;
   border-right: none;

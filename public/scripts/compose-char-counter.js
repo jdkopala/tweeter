@@ -7,10 +7,10 @@ $(document).ready(() => {
     let charCount = countStart - tweetLength
     counter.text(`${charCount}`);
 
-    if (charCount < 0) {
+    if (charCount <= 0) {
       counter.addClass("counter-negative");
     } 
-    if (charCount > 0) {
+    if (charCount >= 0) {
       counter.removeClass("counter-negative");
     }
   });
