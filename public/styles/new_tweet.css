@@ -35,12 +35,14 @@ button:hover {
 
 #button-counter {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
 }
 
 .counter {
   display: flex;
+  justify-content: flex-end;
   width: 10%;
 }
 
