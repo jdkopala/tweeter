@@ -7,7 +7,7 @@
 section.new-tweet form {
   padding: 5px;
   width: 100%;
-  min-width: 340px;
+  min-width: 320px;
 }
 
 textarea {
@@ -53,4 +53,12 @@ button:hover {
   display: flex;
   width: 10%;
   color: red;
+}
+
+@media only screen and (min-width: 1024px) {
+  section.new-tweet form {
+    padding: 5px;
+    width: 70%;
+    min-width: 320px;
+  }
 }

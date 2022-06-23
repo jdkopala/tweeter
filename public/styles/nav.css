@@ -6,7 +6,7 @@
   width: 100%;
   display: flex;
   height: 120px;
-  background-color: #4056A1;
+  background-color: rbga(64, 86, 161,0);
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -23,6 +23,13 @@ nav span {
 
 #icon-arrows {
   color: red;
+  animation: floating 3s ease-in-out infinite;
+}
+/* Set keyframes for animation */
+@keyframes floating {
+  0% { transform: translate(0,  0px); }  /* Starting position */
+  50%  { transform: translate(0, 8px); }  /* "middle" position of animation */
+  100%   { transform: translate(0, -0px); } /* "bottom" position of animation */
 }
 
 div.container {
@@ -32,4 +39,28 @@ div.container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 380px) {
+  nav div text {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .fixed-nav-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    height: 120px;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    justify-content: space-between;
+    z-index: 9999;
+  }
 }

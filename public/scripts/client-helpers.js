@@ -1,6 +1,6 @@
 // Generate an error message for the new tweet form
 const errorMessage = (text) => {
-  let error = `<div id='error'>${text}</div>`
+  let error = `<div id='error'>${text}</div>`;
   $('main.container').prepend(error).hide().slideDown("fast");
 };
 // Creates safe text to stop code injection

@@ -3,7 +3,6 @@
   flex-direction: column;
   height: 400px;
   width: 100%;
-  margin-top: 120px;
   background-color: #cd7b29;
   background-image: url("../images/always-grey.png");
   justify-content: center;
@@ -13,8 +12,10 @@
 
 #profile-pic {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  padding-top: 135px;
+  min-width: 320px;
 }
 
 #username {
@@ -26,4 +27,12 @@
 
 h2 {
   padding-bottom: 50px;
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  #top-of-page {
+    width: 40%;
+    margin: 120px;
+  }
 }

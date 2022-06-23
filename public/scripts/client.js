@@ -29,8 +29,8 @@ $(document).ready(() => {
       $("#tweet-text").focus(); // Focus cursor in form
       let $counter = $("#tweet-text").siblings("div").children("output");
       $counter.text(140); // reset character counter to 140 on submit
-      }
-  })
+    }
+  });
 
   const $writeButton = $('nav').children('.container');
 
@@ -41,13 +41,13 @@ $(document).ready(() => {
 
   // Hide/show the submit new tweet form
   $($writeButton).on('click', () => {
-      if ($form.is(':visible')) {
-        $('#tweet-text').blur();
-        $form.slideUp();
-      } else {
-        $form.slideDown()
-        $('#tweet-text').focus();
-      }
+    if ($form.is(':visible')) {
+      $('#tweet-text').blur();
+      $form.slideUp();
+    } else {
+      $form.slideDown();
+      $('#tweet-text').focus();
+    }
   });
 
 });
