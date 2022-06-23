@@ -84,14 +84,18 @@ $(document).ready(() => {
         .then(loadTweets());
       $("#tweet-text").val("");
       $("#tweet-text").focus();
+      let $counter = $("#tweet-text").siblings("div").children("output");
+      $counter.text(140);
       }
   })
 
-  const $writeButton = $('nav').children('.container')
+  const $writeButton = $('nav').children('.container');
+
   // Change cursor style to the pointer when mouseover the nav button
   $($writeButton).on('mouseover', () => {
     $($writeButton).css('cursor', 'pointer');
-  })
+  });
+
   // Hide/show the submit new tweet form
   $($writeButton).on('click', () => {
       if ($form.is(':visible')) {
