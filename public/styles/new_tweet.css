@@ -1,10 +1,13 @@
 .new-tweet {
   display: flex;
-  align-content: center;
+  justify-content: center;
+  width: 100%;
 }
 
 section.new-tweet form {
   padding: 5px;
+  width: 100%;
+  min-width: 340px;
 }
 
 textarea {
@@ -14,7 +17,7 @@ textarea {
   background: none;
   resize: none;
   height: 60px;
-  width: 750px;
+  width: 100%;
   border-top: none;
   border-right: none;
   border-left: none;
