@@ -4,31 +4,33 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Generate an error message for the new tweet form
 const errorMessage = (text) => {
   let error = `<div id='error'>${text}</div>`
   $('main.container').prepend(error).hide().slideDown("fast");
 };
-
+// Creates safe text to stop code injection
 const escape = (str) => {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
-
+// Load the data from tweets and pass them to the render function
 const loadTweets = () => {
   $.get("/tweets")
     .then((data) => {
       renderTweets(data);
     });
 };
-
+// Loop through tweets data and put the data in the createTweetElement function
 const renderTweets = (data) => {
+  $('#tweets-container').empty();
   for (let d of data) {
     let $tweet = createTweetElement(d);
-    $("#tweets-container").prepend($tweet);
+    $("#tweets-container").prepend($tweet); // Put the tweet in the container on the page
   }
 };
-
+// Create HTML element and inject tweet data so it renders on the page
 const createTweetElement = (tweetData) => {
   let $tweet = (
     `<article class="tweet">
@@ -65,10 +67,10 @@ $(document).ready(() => {
   const $form = $(".new-tweet").children('form');
 
   $form.hide();
-
+  // On submit, check tweet length and submit form
   $($form).submit((event) => {
     event.preventDefault();
-    $('#error').slideUp("fast");
+    $('#error').slideUp("fast"); // Hide error message after submit if visible
     let $tweetText = $("#tweet-text").val().length;
     if ($tweetText > 140) {
       errorMessage("🚨 Your tweet is too long! 🚨");
@@ -81,16 +83,17 @@ $(document).ready(() => {
       $.post("/tweets", $newTweet)
         .then(loadTweets());
       $("#tweet-text").val("");
-    }
+      $("#tweet-text").focus();
+      }
   })
 
   const $writeButton = $('nav').children('.container')
-
+  // Change cursor style to the pointer when mouseover the nav button
   $($writeButton).on('mouseover', () => {
     $($writeButton).css('cursor', 'pointer');
   })
-
-  $($writeButton).on('click', (event) => {
+  // Hide/show the submit new tweet form
+  $($writeButton).on('click', () => {
       if ($form.is(':visible')) {
         $('#tweet-text').blur();
         $form.slideUp();
