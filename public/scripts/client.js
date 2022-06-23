@@ -4,9 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const throwError = (text) => {
+const errorMessage = (text) => {
   let error = `<div id='error'>${text}</div>`
-  $('main.container').prepend(error).slideDown("slow");
+  $('main.container').prepend(error).hide().slideDown("fast");
 };
 
 const escape = (str) => {
@@ -60,19 +60,18 @@ const createTweetElement = (tweetData) => {
 };
 
 $(document).ready(() => {
-  $('error').hide();
   loadTweets();
 
   const $form = $(".new-tweet").children('form');
   $($form).on('submit',(event) => {
     event.preventDefault();
-    $('#error').hide();
+    $('#error').slideUp("fast");
     let $tweetText = $("#tweet-text").val().length;
     if ($tweetText > 140) {
-      throwError("🚨 Your tweet is too long! 🚨");
+      errorMessage("🚨 Your tweet is too long! 🚨");
       return false;
     } else if (!$tweetText) {
-      throwError("🚨 Your tweet is empty 🚨");
+      errorMessage("🚨 Your tweet is empty 🚨");
       return false;
     } else if ($tweetText <= 140) {
       const $newTweet = $form.serialize();
