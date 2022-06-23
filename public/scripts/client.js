@@ -68,7 +68,7 @@ $(document).ready(() => {
   const $form = $(".new-tweet").children('form');
 
   $form.hide();
-  // On submit, check tweet length and submit form
+  // On submit, check tweet length and submit form or display error message based on it's content
   $($form).submit((event) => {
     event.preventDefault();
     $('#error').slideUp("fast"); // Hide error message after submit if visible
@@ -103,7 +103,7 @@ $(document).ready(() => {
         $('#tweet-text').blur();
         $form.slideUp();
       } else {
-        $form.slideDown('fast')
+        $form.slideDown()
         $('#tweet-text').focus();
       }
   });
