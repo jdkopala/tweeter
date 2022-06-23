@@ -10,7 +10,7 @@ const errorMessage = (text) => {
   $('main.container').prepend(error).hide().slideDown("fast");
 };
 // Creates safe text to stop code injection
-const escape = (str) => {
+const escapeHTML = (str) => {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -44,7 +44,7 @@ const createTweetElement = (tweetData) => {
       </span>
     </header>
     <div class="content">
-      ${escape(tweetData.content.text)}
+      ${escapeHTML(tweetData.content.text)}
     </div>
     <footer>
       <span>
@@ -60,6 +60,7 @@ const createTweetElement = (tweetData) => {
 
   return $tweet;
 };
+
 
 $(document).ready(() => {
   loadTweets();
@@ -85,7 +86,7 @@ $(document).ready(() => {
       $("#tweet-text").val("");
       $("#tweet-text").focus();
       let $counter = $("#tweet-text").siblings("div").children("output");
-      $counter.text(140);
+      $counter.text(140); // reset character counter to 140 on submit
       }
   })
 
