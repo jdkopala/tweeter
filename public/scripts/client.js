@@ -63,7 +63,10 @@ $(document).ready(() => {
   loadTweets();
 
   const $form = $(".new-tweet").children('form');
-  $($form).on('submit',(event) => {
+
+  $form.hide();
+
+  $($form).submit((event) => {
     event.preventDefault();
     $('#error').slideUp("fast");
     let $tweetText = $("#tweet-text").val().length;
@@ -79,5 +82,22 @@ $(document).ready(() => {
         .then(loadTweets());
       $("#tweet-text").val("");
     }
+  })
+
+  const $writeButton = $('nav').children('.container')
+
+  $($writeButton).on('mouseover', () => {
+    $($writeButton).css('cursor', 'pointer');
+  })
+
+  $($writeButton).on('click', (event) => {
+      if ($form.is(':visible')) {
+        $('#tweet-text').blur();
+        $form.slideUp();
+      } else {
+        $form.slideDown('fast')
+        $('#tweet-text').focus();
+      }
   });
+
 });
