@@ -7,10 +7,10 @@ It's a showcase of responsive page design, animations and single page updating u
 
 ## Screenshots
 
-!["Desktop view"] (URL HERE)
-!["Mobile view, with the tweet form hidden"] (URL HERE)
-!["Mobile view, with the tweet form revealed"] (URL HERE)
-!["Mobile view of the tweet feed"] (URL HERE)
+!["Desktop view"] (https://github.com/jdkopala/tweeter/blob/master/docs/Desktop%20View.png)
+!["Mobile view, with the tweet form hidden"] (https://github.com/jdkopala/tweeter/blob/master/docs/Mobile%20View%20NoTweet.png)
+!["Mobile view, with the tweet form revealed"] (https://github.com/jdkopala/tweeter/blob/master/docs/Mobile%20View%20TweetForm.png)
+!["Mobile view of the tweet feed"] (https://github.com/jdkopala/tweeter/blob/master/docs/TweetFeed.png)
 
 ## Getting Started
 
